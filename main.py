@@ -18,8 +18,10 @@ def word_counter(show_text):
     return len(words)
 #function to count each character in the book
 def character_count(show_text):
+    #first we need to make every character lower case
     lower_chrs = show_text.lower()
+    #use the Counter class to count the chars and output them as dictionary
     chr_counter = Counter(lower_chrs)
     return chr_counter
-
+    #cant figure out how the get that effin "Counter"" out of the output though..
 main()
