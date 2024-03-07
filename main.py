@@ -1,5 +1,3 @@
-from collections import Counter
-#Could not figure out any other way to count the charactes in the text so I imported this class
 def main():
     path_to_book = "books/frankenstein.txt" #define the path to the book to be used in other functions
     show_text = text_output(path_to_book) #define the use of text_output function. Takes the books path as an input
@@ -18,10 +16,15 @@ def word_counter(show_text):
     return len(words)
 #function to count each character in the book
 def character_count(show_text):
-    #first we need to make every character lower case
-    lower_chrs = show_text.lower()
-    #use the Counter class to count the chars and output them as dictionary
-    chr_counter = Counter(lower_chrs)
-    return chr_counter
-    #cant figure out how the get that effin "Counter"" out of the output though..
+    #create empty dict
+    chr_dict = {}
+    for chr in show_text:
+        lower_chrs = chr.lower()
+        if lower_chrs in chr_dict:
+            #I wonder if I should have excluded special characters etc...
+            chr_dict[lower_chrs] += 1
+        else:
+            chr_dict[lower_chrs] = 1
+    return chr_dict
+
 main()
