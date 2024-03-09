@@ -4,8 +4,7 @@ def main():
     num_count = word_counter(show_text) #define the use of word_counter function. Takes the text from text_output function as an input
     characters = character_count(show_text)
     print(f"We have {num_count} words in this book")#print the word count from word_counter function
-    print("And below we have a count for each character in the text")
-    print(characters)
+    print()
 #display the contents of the book. Use with-statement block
 def text_output(path_to_book):
     with open(path_to_book) as f:#open the contents and rename the value as f
@@ -26,5 +25,8 @@ def character_count(show_text):
         else:
             chr_dict[lower_chrs] = 1
     return chr_dict
+
+def list_counts(characters):
+
 
 main()
